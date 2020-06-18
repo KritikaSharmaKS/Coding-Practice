@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.stream.Collectors;
 public class TwoSum {
 
 	
@@ -20,11 +21,24 @@ public class TwoSum {
 			
 		} 
 		return result;
+		
+		//Bad approach
+//		int [] result = new int[2]; 
+//		for(int i = 0; i < nums.length; i++) {
+//			int secondNum = target - nums[i];
+//			int indexOfSecondNum = Arrays.stream(nums).boxed().collect(Collectors.toList()).lastIndexOf(secondNum);
+//			if((indexOfSecondNum != -1) && (indexOfSecondNum != i)) {
+//				result[0] = i;
+//				result[1] = indexOfSecondNum;
+//				break;
+//			}
+//		}
+//		return result;
 	}
 	
 	public static void main(String[] args) {
-		int [] numArray = {2, 7, 11, 5};
-		int [] returnValue = TwoSum.twoSum(numArray, 9);
+		int [] numArray = {3, 2, 4};
+		int [] returnValue = TwoSum.twoSum(numArray, 6);
 		for(int i = 0; i < returnValue.length; i++) {
 			System.out.println(returnValue[i]);
 		}
